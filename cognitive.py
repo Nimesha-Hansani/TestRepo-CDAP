@@ -166,7 +166,7 @@ def CalculateCognitiveMetricValue(filePath):
         SplittedWord = WordContent.split(' ')
         charlist = list(WordContent)
         
-        TotalDistinctOperators =CalculateArithmeticOperartors1(SplittedWord) + CalculateLogicalOperators(SplittedWord) + CalculateArithmeticOperartors2(charlist)
+        TotalDistinctOperators = CalculateArithmeticOperartors1(SplittedWord) + CalculateLogicalOperators(SplittedWord) + CalculateArithmeticOperartors2(charlist)
         
         for line in filecontent:
             CalculateCognitiveWeight(line)
