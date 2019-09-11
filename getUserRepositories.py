@@ -1,21 +1,28 @@
-from github import Github
-g =  None
-
-def test():
-    instance = Github("Nimesha-Hansani", "19950525hansani")
-    print(instance)
-    global g 
-    g = instance
-    print(g)
-    repos=g.get_user().get_repos()    
-
-    for repo in repos:
-        print(repo.name)
+from github  import Github
 
 
-def test2():
-    print(g)
+baseUrl='https://raw.githubusercontent.com/'
 
+g = Github('nimeshaamarasingha@gmail.com', '19950525hansani')
+repository=g.get_repo('Nimesha-Hansani/TestRepo-CDAP')
+branches=repository.get_branches()
+    
+for br in branches:
+   headCommit=br.commit.sha
 
-test()
-test2()
+   commits = repository.get_commits(headCommit)
+   for com in commits:
+        commitDateTime = com.commit.author.date
+        print(commitDateTime)
+
+        tree=repository.get_git_tree(com.sha).tree
+        
+        for tr in tree :
+             
+              treeContent=repository.get_contents(tr.path)
+              print(treeContent)
+
+              while len(treeContent)> 1:
+
+                      file_content=treeContent.pop(0)
+                      print(file_content)
