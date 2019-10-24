@@ -8,7 +8,7 @@ from pymongo import InsertOne
 import datetime
 
 
-file_Path = 'D:\SLIIT EDU\Year 4 Semester 2\CDAP\Documents\QTest.cs'
+file_Path = 'D:\CDAP\g-Codex\IT16038288\Test.py'
 
 #Function for Calculate Cognitive Weight
 def CalculateCognitiveWeight(line):
@@ -175,14 +175,14 @@ def CalculateCognitiveMetricValue(filePath):
                LinesOfCode = LinesOfCode + 1
     
     FinalValue = (TotalCognitiveWeight + TotalDistinctIdentifiers + TotalDistinctOperators)/ LinesOfCode
-    print("LinesOfCode"+ str(LinesOfCode))
-    
+    print("LinesOfCode  "+ str(LinesOfCode))
+    print("Final Value  " + str(FinalValue))
     return [FinalValue ,TotalCognitiveWeight ,TotalDistinctIdentifiers , TotalDistinctOperators ]
 
 
 if os.path.isfile(file_Path):
       x =CalculateCognitiveMetricValue(file_Path)
-      print(x)
+    
 else:
 
     print("Not a file")

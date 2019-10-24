@@ -79,11 +79,11 @@ def CalculateHalsteadMetric(filePath):
 
     unit = {'V': 'bits', 'T': 'seconds'}
     name = {'N':'Halstead Program Length', 'n':'Halstead Vocabulary', 'V':'Program Volume', 'D':'Program Difficulty', 'E': 'Programming Effort', 'L':'Language level', 'I':'Intelligence Content', 'T':'Programming time','N^':'Estimated program length', 'L^':'Estimated language level'}
-    print(E)
+    print(D,E,T)
     return [N,n,V,D,E,T]
 
     
-path = 'D:\SLIIT EDU\Year 4 Semester 2\CDAP\Documents\QTest.cs'
+path ='D:\CDAP\g-Codex\IT16038288\Test.py'
 CalculateHalsteadMetric(path)
 
 
