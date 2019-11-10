@@ -52,6 +52,10 @@ for br in branches:
                                 treeContent.extend(repository.get_contents(file_content.path))
                             else:
                                 print(file_content.path)
+                    
+                    elif (tr.type == "blob"):
+
+                        print(tr.path)
                 
                 except :
                     pass 
