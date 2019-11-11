@@ -9,7 +9,7 @@ import datetime
 
 
 
-
+# # # #
 #DB Connection to the cognitive value collection
 
 myclient = MongoClient('localhost',27017)
